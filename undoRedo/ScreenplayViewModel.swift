@@ -47,12 +47,18 @@ class ScreenplayViewModel {
     }
     
     func element(for id: NSManagedObjectID) -> ScreenplayElement {
-        elements.first(where: { $0.id == id })!
+        model.element(for: id)
     }
     
     func setText(for elementID: NSManagedObjectID, text: String) {
         model.setText(for: elementID, text: text)
     }
+    
+    func undo() { model.undo() }
+    func redo() { model.redo() }
+    
+    var canUndo: Bool { model.canUndo }
+    var canRedo: Bool { model.canRedo }
     
     private func updateSnapshot() {
         var newSnapshot = ScreenplaySnapshot()

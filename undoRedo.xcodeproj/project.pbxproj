@@ -22,6 +22,7 @@
 		9DB0692A2D8F390100487E48 /* ScreenplayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB0691B2D8F390100487E48 /* ScreenplayModel.swift */; };
 		9DB0692B2D8F390100487E48 /* ScreenplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB0691C2D8F390100487E48 /* ScreenplayViewController.swift */; };
 		9DB0692C2D8F390100487E48 /* ScreenplayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB0691D2D8F390100487E48 /* ScreenplayViewModel.swift */; };
+		9DB0692E2D8F3BCF00487E48 /* UndoRedoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB0692D2D8F3BC900487E48 /* UndoRedoManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		9DB0691B2D8F390100487E48 /* ScreenplayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenplayModel.swift; sourceTree = "<group>"; };
 		9DB0691C2D8F390100487E48 /* ScreenplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenplayViewController.swift; sourceTree = "<group>"; };
 		9DB0691D2D8F390100487E48 /* ScreenplayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenplayViewModel.swift; sourceTree = "<group>"; };
+		9DB0692D2D8F3BC900487E48 /* UndoRedoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UndoRedoManager.swift; sourceTree = "<group>"; };
 		9DCFD6BF2D8EE62A0080F198 /* undoRedo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = undoRedo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -80,6 +82,7 @@
 				9DB0691B2D8F390100487E48 /* ScreenplayModel.swift */,
 				9DB0691C2D8F390100487E48 /* ScreenplayViewController.swift */,
 				9DB0691D2D8F390100487E48 /* ScreenplayViewModel.swift */,
+				9DB0692D2D8F3BC900487E48 /* UndoRedoManager.swift */,
 			);
 			path = undoRedo;
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 			files = (
 				9DB069232D8F390100487E48 /* AppDelegate.swift in Sources */,
 				9DB069242D8F390100487E48 /* SceneDelegate.swift in Sources */,
+				9DB0692E2D8F3BCF00487E48 /* UndoRedoManager.swift in Sources */,
 				9DB069252D8F390100487E48 /* CoreDataStack.swift in Sources */,
 				9DB069262D8F390100487E48 /* DBGenerator.swift in Sources */,
 				9DB069272D8F390100487E48 /* ElementCellContentConfiguration.swift in Sources */,

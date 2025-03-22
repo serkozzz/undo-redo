@@ -12,11 +12,15 @@ class ScreenplayViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBOutlet weak var undoButton: UIBarButtonItem!
+    @IBOutlet weak var redoButton: UIBarButtonItem!
     private var dataSource: UICollectionViewDiffableDataSource<String, NSManagedObjectID>!
     private var viewModel = ScreenplayViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        undoButton.isEnabled = false
+        redoButton.isEnabled = false
         collectionView.collectionViewLayout = createLayout()
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         
@@ -28,7 +32,10 @@ class ScreenplayViewController: UIViewController {
             let conf = ElementCellContentConfiguration()
             conf.text = element.text
             conf.onTextEdited = { [weak self] newText in
-                self?.viewModel.setText(for: id, text: newText)
+                guard let self else { return }
+                viewModel.setText(for: id, text: newText)
+                undoButton.isEnabled = viewModel.canUndo
+                redoButton.isEnabled = viewModel.canRedo
             }
             cell.contentConfiguration = conf
             return cell
@@ -38,10 +45,34 @@ class ScreenplayViewController: UIViewController {
             self?.applySnapshot()
         }
         applySnapshot()
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tapGesture.cancelsTouchesInView = false
+        view.addGestureRecognizer(tapGesture)
     }
     
+    @objc private func dismissKeyboard() {
+        view.endEditing(true)
+    }
+
+    
     func applySnapshot(animating: Bool = true) {
-        dataSource.apply(viewModel.snapshot, animatingDifferences: animating)
+        DispatchQueue.main.async { [weak self] in
+            guard let self else { return }
+            dataSource.apply(viewModel.snapshot, animatingDifferences: animating)
+        }
+    }
+    
+    @IBAction func undo(_ sender: Any) {
+        viewModel.undo()
+        undoButton.isEnabled = viewModel.canUndo
+        redoButton.isEnabled = viewModel.canRedo
+        
+    }
+    
+    @IBAction func redo(_ sender: Any) {
+        viewModel.redo()
+        undoButton.isEnabled = viewModel.canUndo
+        redoButton.isEnabled = viewModel.canRedo
     }
 }
 

@@ -49,12 +49,22 @@
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="hWO-fs-gEK">
                         <rightBarButtonItems>
-                            <barButtonItem image="arrowshape.turn.up.right.fill" catalog="system" id="2JE-iC-1c6"/>
-                            <barButtonItem title="Item" image="arrowshape.turn.up.left.fill" catalog="system" id="8x9-nf-5SR"/>
+                            <barButtonItem image="arrowshape.turn.up.right.fill" catalog="system" id="2JE-iC-1c6">
+                                <connections>
+                                    <action selector="redo:" destination="BYZ-38-t0r" id="I74-Wo-aPH"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="arrowshape.turn.up.left.fill" catalog="system" id="8x9-nf-5SR">
+                                <connections>
+                                    <action selector="undo:" destination="BYZ-38-t0r" id="HB9-Cl-qaR"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="BGz-UQ-7I0" id="e6x-xP-Ixw"/>
+                        <outlet property="redoButton" destination="2JE-iC-1c6" id="9lB-ug-yYF"/>
+                        <outlet property="undoButton" destination="8x9-nf-5SR" id="phb-HY-KE3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
