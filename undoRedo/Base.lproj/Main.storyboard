@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BGz-UQ-7I0">
-                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="749"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="c6w-y9-6Tc">
                                     <size key="itemSize" width="128" height="128"/>
@@ -37,14 +37,23 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Warning!!! Works bad with focus. You should tap at free space of view before tap undo/redo." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="twx-FT-oid">
+                                <rect key="frame" x="0.0" y="777.33333333333337" width="393" height="40.666666666666629"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="twx-FT-oid" secondAttribute="trailing" id="8S5-Fc-Dn2"/>
                             <constraint firstItem="BGz-UQ-7I0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Mo8-JP-aTX"/>
+                            <constraint firstItem="twx-FT-oid" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="WX2-Do-zRD"/>
                             <constraint firstItem="BGz-UQ-7I0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="baf-pb-iYV"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="BGz-UQ-7I0" secondAttribute="bottom" id="eOV-CH-BH1"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BGz-UQ-7I0" secondAttribute="trailing" id="fXf-5p-qjd"/>
+                            <constraint firstAttribute="bottom" secondItem="BGz-UQ-7I0" secondAttribute="bottom" id="wEC-9u-Qnm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="twx-FT-oid" secondAttribute="bottom" id="y5h-XV-Mez"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="hWO-fs-gEK">
@@ -95,6 +104,9 @@
         <image name="arrowshape.turn.up.right.fill" catalog="system" width="128" height="104"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
