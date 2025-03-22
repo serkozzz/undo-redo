@@ -9,34 +9,40 @@
 /* Begin PBXBuildFile section */
 		9DB068DE2D8EECB200487E48 /* database.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9DB068DC2D8EECB200487E48 /* database.xcdatamodeld */; };
 		9DB068E72D8EF22F00487E48 /* ScreenplayElementDB+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB068E42D8EF22F00487E48 /* ScreenplayElementDB+CoreDataClass.swift */; };
+		9DB0691F2D8F390100487E48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DB0690E2D8F390100487E48 /* Assets.xcassets */; };
+		9DB069212D8F390100487E48 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DB069112D8F390100487E48 /* LaunchScreen.storyboard */; };
+		9DB069222D8F390100487E48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DB069192D8F390100487E48 /* Main.storyboard */; };
+		9DB069232D8F390100487E48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB0690D2D8F390100487E48 /* AppDelegate.swift */; };
+		9DB069242D8F390100487E48 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB069122D8F390100487E48 /* SceneDelegate.swift */; };
+		9DB069252D8F390100487E48 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB069142D8F390100487E48 /* CoreDataStack.swift */; };
+		9DB069262D8F390100487E48 /* DBGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB069152D8F390100487E48 /* DBGenerator.swift */; };
+		9DB069272D8F390100487E48 /* ElementCellContentConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB069162D8F390100487E48 /* ElementCellContentConfiguration.swift */; };
+		9DB069282D8F390100487E48 /* ElementCellContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB069172D8F390100487E48 /* ElementCellContentView.swift */; };
+		9DB069292D8F390100487E48 /* ScreenplayElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB0691A2D8F390100487E48 /* ScreenplayElement.swift */; };
+		9DB0692A2D8F390100487E48 /* ScreenplayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB0691B2D8F390100487E48 /* ScreenplayModel.swift */; };
+		9DB0692B2D8F390100487E48 /* ScreenplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB0691C2D8F390100487E48 /* ScreenplayViewController.swift */; };
+		9DB0692C2D8F390100487E48 /* ScreenplayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB0691D2D8F390100487E48 /* ScreenplayViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9DB068DD2D8EECB200487E48 /* database.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = database.xcdatamodel; sourceTree = "<group>"; };
 		9DB068E42D8EF22F00487E48 /* ScreenplayElementDB+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScreenplayElementDB+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9DB0690D2D8F390100487E48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9DB0690E2D8F390100487E48 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9DB0690F2D8F390100487E48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9DB069102D8F390100487E48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9DB069122D8F390100487E48 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		9DB069142D8F390100487E48 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		9DB069152D8F390100487E48 /* DBGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBGenerator.swift; sourceTree = "<group>"; };
+		9DB069162D8F390100487E48 /* ElementCellContentConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementCellContentConfiguration.swift; sourceTree = "<group>"; };
+		9DB069172D8F390100487E48 /* ElementCellContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementCellContentView.swift; sourceTree = "<group>"; };
+		9DB069182D8F390100487E48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9DB0691A2D8F390100487E48 /* ScreenplayElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenplayElement.swift; sourceTree = "<group>"; };
+		9DB0691B2D8F390100487E48 /* ScreenplayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenplayModel.swift; sourceTree = "<group>"; };
+		9DB0691C2D8F390100487E48 /* ScreenplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenplayViewController.swift; sourceTree = "<group>"; };
+		9DB0691D2D8F390100487E48 /* ScreenplayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenplayViewModel.swift; sourceTree = "<group>"; };
 		9DCFD6BF2D8EE62A0080F198 /* undoRedo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = undoRedo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		9DCFD6D12D8EE62C0080F198 /* Exceptions for "undoRedo" folder in "undoRedo" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				App/Info.plist,
-			);
-			target = 9DCFD6BE2D8EE62A0080F198 /* undoRedo */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		9DCFD6C12D8EE62A0080F198 /* undoRedo */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				9DCFD6D12D8EE62C0080F198 /* Exceptions for "undoRedo" folder in "undoRedo" target */,
-			);
-			path = undoRedo;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		9DCFD6BC2D8EE62A0080F198 /* Frameworks */ = {
@@ -49,12 +55,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9DB069132D8F390100487E48 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				9DB0690D2D8F390100487E48 /* AppDelegate.swift */,
+				9DB0690E2D8F390100487E48 /* Assets.xcassets */,
+				9DB0690F2D8F390100487E48 /* Info.plist */,
+				9DB069112D8F390100487E48 /* LaunchScreen.storyboard */,
+				9DB069122D8F390100487E48 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		9DB0691E2D8F390100487E48 /* undoRedo */ = {
+			isa = PBXGroup;
+			children = (
+				9DB069132D8F390100487E48 /* App */,
+				9DB069142D8F390100487E48 /* CoreDataStack.swift */,
+				9DB069152D8F390100487E48 /* DBGenerator.swift */,
+				9DB069162D8F390100487E48 /* ElementCellContentConfiguration.swift */,
+				9DB069172D8F390100487E48 /* ElementCellContentView.swift */,
+				9DB069192D8F390100487E48 /* Main.storyboard */,
+				9DB0691A2D8F390100487E48 /* ScreenplayElement.swift */,
+				9DB0691B2D8F390100487E48 /* ScreenplayModel.swift */,
+				9DB0691C2D8F390100487E48 /* ScreenplayViewController.swift */,
+				9DB0691D2D8F390100487E48 /* ScreenplayViewModel.swift */,
+			);
+			path = undoRedo;
+			sourceTree = "<group>";
+		};
 		9DCFD6B62D8EE6290080F198 = {
 			isa = PBXGroup;
 			children = (
 				9DB068E42D8EF22F00487E48 /* ScreenplayElementDB+CoreDataClass.swift */,
 				9DB068DC2D8EECB200487E48 /* database.xcdatamodeld */,
-				9DCFD6C12D8EE62A0080F198 /* undoRedo */,
+				9DB0691E2D8F390100487E48 /* undoRedo */,
 				9DCFD6C02D8EE62A0080F198 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -81,9 +116,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				9DCFD6C12D8EE62A0080F198 /* undoRedo */,
 			);
 			name = undoRedo;
 			packageProductDependencies = (
@@ -131,6 +163,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DB0691F2D8F390100487E48 /* Assets.xcassets in Resources */,
+				9DB069212D8F390100487E48 /* LaunchScreen.storyboard in Resources */,
+				9DB069222D8F390100487E48 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,12 +176,41 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DB069232D8F390100487E48 /* AppDelegate.swift in Sources */,
+				9DB069242D8F390100487E48 /* SceneDelegate.swift in Sources */,
+				9DB069252D8F390100487E48 /* CoreDataStack.swift in Sources */,
+				9DB069262D8F390100487E48 /* DBGenerator.swift in Sources */,
+				9DB069272D8F390100487E48 /* ElementCellContentConfiguration.swift in Sources */,
+				9DB069282D8F390100487E48 /* ElementCellContentView.swift in Sources */,
+				9DB069292D8F390100487E48 /* ScreenplayElement.swift in Sources */,
+				9DB0692A2D8F390100487E48 /* ScreenplayModel.swift in Sources */,
+				9DB0692B2D8F390100487E48 /* ScreenplayViewController.swift in Sources */,
+				9DB0692C2D8F390100487E48 /* ScreenplayViewModel.swift in Sources */,
 				9DB068E72D8EF22F00487E48 /* ScreenplayElementDB+CoreDataClass.swift in Sources */,
 				9DB068DE2D8EECB200487E48 /* database.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		9DB069112D8F390100487E48 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9DB069102D8F390100487E48 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		9DB069192D8F390100487E48 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9DB069182D8F390100487E48 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		9DCFD6D32D8EE62C0080F198 /* Debug */ = {

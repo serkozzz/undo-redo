@@ -25,8 +25,11 @@ class ScreenplayViewController: UIViewController {
             guard let self else { return nil }
             let element = viewModel.element(for: id)
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-            var conf = UIListContentConfiguration.cell()
+            let conf = ElementCellContentConfiguration()
             conf.text = element.text
+            conf.onTextEdited = { [weak self] newText in
+                self?.viewModel.setText(for: id, text: newText)
+            }
             cell.contentConfiguration = conf
             return cell
         }
