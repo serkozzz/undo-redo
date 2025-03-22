@@ -53,8 +53,8 @@ class ScreenplayModel: NSObject {
         let fetchRequest: NSFetchRequest<ScreenplayElementDB> = ScreenplayElementDB.fetchRequest()
         
         //обязательно нужна какая то сортировка иначе креш
-        let nameSort = NSSortDescriptor(key: #keyPath(ScreenplayElementDB.order), ascending: true)
-        fetchRequest.sortDescriptors = [nameSort]
+        let orderSort = NSSortDescriptor(key: #keyPath(ScreenplayElementDB.order), ascending: true)
+        fetchRequest.sortDescriptors = [orderSort]
     
         let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest,
                                                                   managedObjectContext: CoreDataStack.shared.managedContext,

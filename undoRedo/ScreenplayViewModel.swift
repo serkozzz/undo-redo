@@ -31,12 +31,12 @@ class ScreenplayViewModel {
             onUpdate?(.collectionUpdated)
         }.store(in: &cancellables)
         
-        model.elementChanged.sink { [weak self] id in
-            guard let self = self else { return }
-            self.snapshot = snapshot
-            self.snapshot.reloadItems([id])
-            onUpdate?(.elementUpdated)
-        }.store(in: &cancellables)
+//        model.elementChanged.sink { [weak self] id in
+//            guard let self = self else { return }
+//            self.snapshot = snapshot
+//            self.snapshot.reloadItems([id])
+//            onUpdate?(.elementUpdated)
+//        }.store(in: &cancellables)
         //you need create first snapshot manually, casuse fetchedResultsController doesn't call its delegate on start
         updateSnapshot()
     }
