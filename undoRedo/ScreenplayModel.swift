@@ -13,7 +13,7 @@ class ScreenplayModel: NSObject {
     let collectionChanged = PassthroughSubject<NSDiffableDataSourceSnapshot<String, NSManagedObjectID>, Never>()
     let elementChanged = PassthroughSubject<NSManagedObjectID, Never>()
     
-    private lazy var undoRedoManager = UndoRedoManager(delegate: self)
+    private lazy var undoManager = UndoManager()
     
     override init() {
         super.init()
@@ -35,18 +35,46 @@ class ScreenplayModel: NSObject {
         fetchedResultsController.fetchedObjects!
     }
     
+    
+    
+    func registerChangeTextUndo(element: ScreenplayElementDB, oldText: String, newText: String) {
+        undoManager.registerUndo(withTarget: self) { screenplayModel in
+            element.text = oldText
+            CoreDataStack.shared.saveContext()
+            screenplayModel.elementChanged.send(element.objectID)
+            screenplayModel.registerChangeTextRedo(element: element, oldText: oldText, newText: newText)
+        }
+    }
+    
+    
+    func registerChangeTextRedo(element: ScreenplayElementDB, oldText: String, newText: String) {
+        undoManager.registerUndo(withTarget: self) { screenplayModel in
+            element.text = newText
+            CoreDataStack.shared.saveContext()
+            screenplayModel.elementChanged.send(element.objectID)
+            screenplayModel.registerChangeTextUndo(element: element, oldText: oldText, newText: newText)
+        }
+    }
+
+    
     func setText(for elementID: NSManagedObjectID, text: String) {
         let oldText = element(for: elementID).text
         guard oldText != text else { return }
-        doChangeText(elementID: elementID, oldText: oldText, newText: text)
-        undoRedoManager.addAction(ScreenplayAction.changeText(itemID: elementID, oldText: oldText, newText: text))
+        
+        let element = allElementsDB.first(where: {$0.objectID == elementID})!
+        
+        registerChangeTextUndo(element: element, oldText: oldText, newText: text)
+        
+        element.text = text
+        CoreDataStack.shared.saveContext()
+        elementChanged.send(elementID)
     }
     
-    func undo() { undoRedoManager.undo() }
-    func redo() { undoRedoManager.redo() }
+    func undo() { undoManager.undo() }
+    func redo() { undoManager.redo() }
     
-    var canUndo: Bool { undoRedoManager.canUndo }
-    var canRedo: Bool { undoRedoManager.canRedo }
+    var canUndo: Bool { undoManager.canUndo }
+    var canRedo: Bool { undoManager.canRedo }
     
     private lazy var fetchedResultsController: NSFetchedResultsController<ScreenplayElementDB> = {
         
@@ -74,23 +102,4 @@ extension ScreenplayModel: NSFetchedResultsControllerDelegate {
         print(snapshot.itemIdentifiers)
         collectionChanged.send(snapshot)
     }
-}
-
-
-extension ScreenplayModel: UndoRedoManagerDelegate {
-    func doChangeText(elementID: NSManagedObjectID, oldText: String, newText: String) {
-        let element = allElementsDB.first(where: {$0.objectID == elementID})!
-        element.text = newText
-        CoreDataStack.shared.saveContext()
-        elementChanged.send(elementID)
-    }
-    
-    func undoChangeText(elementID: NSManagedObjectID, oldText: String, newText: String) {
-        let element = allElementsDB.first(where: {$0.objectID == elementID})!
-        element.text = oldText
-        CoreDataStack.shared.saveContext()
-        elementChanged.send(elementID)
-    }
-    
-    
 }
